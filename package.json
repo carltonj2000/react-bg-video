@@ -3,7 +3,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "build:dist": "vite build --base /bg-video/",
+    "serve": "vite preview",
+    "to:server:img": "rsync -a ./dist/ carltonjoseph.com:/home/carltonj2000/do20041/sites/dataandnotes/web/bg-video/",
+    "to:server:vid": "rsync ./cdr70t80.mp4 carltonjoseph.com:/home/carltonj2000/do20041/sites/dataandnotes/web/bg-video/cdr70t80.mp4",
+    "to:server": "npm run build:dist && npm run to:server:img && npm run to:server:vid"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
